@@ -38,7 +38,7 @@ ZoneName=$(az aks show -g $RESOURCE_GROUP_NAME -n $AKS_NAME -o tsv --query addon
 
 export DNS_NAME=$(az aks show -g $RESOURCE_GROUP_NAME -n $AKS_NAME -o tsv --query addonProfiles.httpApplicationRouting.config.HTTPApplicationRoutingZoneName)
 
-sed -i "s|\!IMAGE\!|${ACR_NAME}/contoso-website|g" ./kubernetes/deployment.yaml
+sed -i "s|\!IMAGE\!|${ACR_NAME}.azurecr.io/contoso-website|g" ./kubernetes/deployment.yaml
 sed -i "s|\!DNS\!|${DNS_NAME}/contoso-website|g" ./kubernetes/ingress.yaml
 
 echo "Installation concluded, copy these values and store them, you'll use them later in this exercise:"
