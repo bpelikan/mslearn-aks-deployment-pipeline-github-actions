@@ -80,6 +80,8 @@ jobs:
           cluster-name: contoso-video
       - name: Run Helm Deploy
         run: |
+          echo ${{ secrets.ACR_NAME }}
+          echo ${{ secrets.DNS_NAME }}
           helm upgrade \
             --install \
             --create-namespace \
