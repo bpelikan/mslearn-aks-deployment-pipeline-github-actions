@@ -38,9 +38,7 @@ jobs:
         #run: echo "{TAG4}={${GITHUB_REF#refs/tags/}}" >> $GITHUB_OUTPUT
       - name: TAG_echo
         run: |
-          echo "TAG=${{TAG}}"
-          echo "TAG2=${{TAG2}}"
-          echo "TAG4=${{TAG4}}"
+          echo "TAG=${{steps.fetch_version.outputs.TAG}}"
           
       - name: Set up Buildx
         uses: docker/setup-buildx-action@v1
