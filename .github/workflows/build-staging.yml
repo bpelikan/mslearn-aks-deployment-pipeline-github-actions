@@ -66,14 +66,14 @@ jobs:
         with:
           # Version of helm
           version: v3.10.3
-      #- name: Azure login
-        #uses: azure/login@v1
-        #with:
-           #creds: ${{ secrets.AZURE_CREDENTIALS }}
+      - name: Azure login
+        uses: azure/login@v1
+        with:
+           creds: ${{ secrets.AZURE_CREDENTIALS }}
       - name: Get AKS Credentials
         uses: Azure/aks-set-context@v3
         with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
+          # creds: ${{ secrets.AZURE_CREDENTIALS }}
           # Resource Group Name
           resource-group: mslearn-gh-pipelines-14484
           # AKS Cluster Name
