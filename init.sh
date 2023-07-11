@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# git clone https://github.com/bpelikan/mslearn-aks-deployment-pipeline-github-actions
+# cd mslearn-aks-deployment-pipeline-github-actions
+# bash init.sh
+
 echo "Defining variables..."
 export RESOURCE_GROUP_NAME=mslearn-gh-pipelines-$RANDOM
 export AKS_NAME=contoso-video
