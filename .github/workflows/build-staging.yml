@@ -29,16 +29,6 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-      - name: Set output
-        id: set_tag_2
-        run: echo "TAG2=value" >> $GITHUB_OUTPUT
-      - name: Set output
-        id: set_tag_4
-        run: echo "TAG4=${{GITHUB_REF#refs/tags/}}" >> $GITHUB_OUTPUT
-      - name: TAG_echo
-        run: |
-          echo "TAG2=${{steps.set_tag_2.outputs.TAG2}}"
-          echo "TAG4=${{steps.set_tag_4.outputs.TAG4}}"
         
       - name: Set up Buildx
         uses: docker/setup-buildx-action@v1
